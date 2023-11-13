@@ -29,6 +29,6 @@ jobs:
 workflows:
   build_and_test:
     jobs:
-      - clean
+      # - clean
       # - build
-      # - test
+      - test
