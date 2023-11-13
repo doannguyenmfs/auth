@@ -3,6 +3,8 @@ version: 2.1
 # Define the jobs we want to run for this project
 jobs:
   clean:
+    docker:
+      - image: cimg/base:2023.03
     steps:
     - run: |
         cd be_java_spring_boot
