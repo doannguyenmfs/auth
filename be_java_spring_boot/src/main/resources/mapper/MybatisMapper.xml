@@ -1,0 +1,20 @@
+<mapper xmlns="http://mybatis.org/schema/mybatis-mapper">
+    <sqlMap namespace="Account">
+
+        <resultMap id="result" class="examples.Account">
+            <result property="name" column="NAME" columnIndex="1"/>
+            <result property="email" column="EMAIL" columnIndex="2"/>
+        </resultMap>
+
+        <select id="getAccountByEmail" resultMap="result">
+            select ACCOUNT.NAME, ACCOUNT.EMAIL
+            from ACCOUNT
+            where ACCOUNT.EMAIL = #value#
+        </select>
+
+        <insert id="insertAccount">
+            insert into ACCOUNT (NAME, EMAIL) values (#name#, #email#)
+        </insert>
+
+    </sqlMap>
+</mapper>

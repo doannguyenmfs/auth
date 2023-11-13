@@ -1,0 +1,9 @@
+version: 2.1
+
+jobs:
+  clean:
+    steps:
+      name: clean
+      run: |
+        mvn clean
+        echo "finish clean"
