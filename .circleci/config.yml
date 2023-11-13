@@ -6,9 +6,10 @@ jobs:
     docker:
       - image: cimg/base:2023.03
     steps:
-    - run: |
-        cd be_java_spring_boot
-        mvn clean
+      - checkout
+      - run: |
+          cd be_java_spring_boot
+          mvn clean
   build:
     docker:
       - image: cimg/base:2023.03
@@ -20,7 +21,9 @@ jobs:
       - image: cimg/base:2023.03
     steps:
       - checkout
-      - run: echo "this is the test job"
+      - run: |
+          pwd
+          ls -la
 
 # Orchestrate our job run sequence
 workflows:
