@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          cd be_java_spring_boot
+          cd ./be_java_spring_boot
           mvn clean
   build:
     docker:
@@ -29,6 +29,6 @@ jobs:
 workflows:
   build_and_test:
     jobs:
-      # - clean
+      - clean
       # - build
-      - test
+      # - test
